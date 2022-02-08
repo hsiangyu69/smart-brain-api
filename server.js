@@ -13,7 +13,7 @@ const res = require("express/lib/response");
 const db = knex({
     client: 'pg',
     connection: {
-        host: '127.0.0.1',
+        host: 'postgresql-triangular-55776',
         user: 'hsiangyuchen',
         port: 5432,
         password: '',
@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(cors());
 
 // main
-app.get("/", (req, res) => {res.send("It is working")})
+app.get("/", (req, res) => { res.send("It is working") })
 
 // signIn
 app.post("/signin", signin.handleSignin(db, bcrypt))
