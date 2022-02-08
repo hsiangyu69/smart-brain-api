@@ -13,11 +13,8 @@ const res = require("express/lib/response");
 const db = knex({
     client: 'pg',
     connection: {
-        host: 'postgresql-triangular-55776',
-        user: 'hsiangyuchen',
-        port: 5432,
-        password: '',
-        database: 'smart-brain'
+        host: process.env.DATABASE_URL,
+        ssl: true
     }
 });
 
